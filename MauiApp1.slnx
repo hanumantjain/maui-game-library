@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Client/Client.csproj" />
+  <Project Path="GameLibrary/GameLibrary.csproj" />
+  <Project Path="WebApplication1/WebApplication1.csproj" />
+</Solution>

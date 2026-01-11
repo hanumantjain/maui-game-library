@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Client.Views.Desktop.GameDetailPage"
+             xmlns:models="clr-namespace:Client.Models"
+             x:DataType="models:ProductTem"
+             Title="{Binding Name}">
+
+    <ScrollView>
+        <Grid ColumnDefinitions="2*,3*" RowDefinitions="Auto" Padding="20" ColumnSpacing="20">
+
+            <Image Grid.Column="0"
+                   Source="{Binding Image}"
+                   Aspect="AspectFit"
+                   MinimumWidthRequest="200"
+                   MinimumHeightRequest="200" />
+
+            <VerticalStackLayout Grid.Column="1" Spacing="10">
+                <Label Text="{Binding Name}" FontSize="48" HorizontalTextAlignment="Center" 
+                     FontAttributes="Bold" />
+                <Label Text="{Binding Description}" FontSize="24" />
+
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="Price:"  FontSize="24" />
+                    <Label Text="{Binding Price, StringFormat='{0:C}'}" FontSize="24" />
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="Release Date:" 
+                         FontSize="24" />
+                    <Label Text="{Binding ReleasedDate}" FontSize="24" />
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Spacing="10" Padding="0,0,0,0">
+                    <Label Text="Genre:" FontSize="24" />
+                    <Label Text="{Binding GenreName, FallbackValue='Unknown', TargetNullValue='Unknown'}" FontSize="24" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Start" />
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="20" Margin="0,20,0,0">
+                    <Button Text="Edit" Clicked="OnEditClicked" WidthRequest="160" Padding="12,8" />
+                    <Button Text="Delete" Clicked="OnDeleteClicked" BackgroundColor="#E53935" TextColor="White" WidthRequest="160" Padding="12,8" />
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+
+        </Grid>
+    </ScrollView>
+</ContentPage>

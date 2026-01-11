@@ -1,0 +1,138 @@
+# Build results
+bin/
+obj/
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio cache/options directory
+.vs/
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Rider
+.idea/
+*.sln.iml
+*.swp
+*.swo
+*~
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# MAUI specific
+.maui/
+.maui-bin/
+
+# NuGet
+*.nupkg
+*.snupkg
+*.nuget.props
+*.nuget.targets
+
+# Rider packages
+.packages/
+.idea/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Rider
+.idea/
+*.sln.iml
+
+# Local environment files
+.env
+.env.local
+*.log
+
+# iOS/Android Build Artifacts
+.xcarchive/
+*.app/
+*.apk
+*.aab
+*.ipa
+
+# Xcode
+*.xcworkspace/
+xcuserdata/
+DerivedData/
+
+# Android
+.gradle/
+.Android/
+local.properties
+proguard/
+
+# Certificates and keys (security)
+*.p12
+*.pfx
+*.pem
+*.key
+*.csr
+*.cer
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+.#*
+
+# IDE settings
+*.vscode/
+.vscode/settings.json
+.vscode/launch.json
+.vscode/extensions.json
+.vscode/*.code-snippets
+
+# Package manager
+.npm/
+node_modules/
+
+# Testing
+.coverage/
+TestResults/
+
+# Application logs
+addimage.log
+*.log
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Backup files
+*.backup
+*.bk
+
+# OS specific
+Thumbs.db
+.DS_Store
+*.swp
+*.swo
+*~

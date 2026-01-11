@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Client.Views.Desktop.EditGamePage"
+             xmlns:models="clr-namespace:Client.Models"
+             xmlns:inputLayout="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
+             xmlns:editors="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
+             x:DataType="models:Products"
+             Title="Edit Game">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="14">
+
+            <Image x:Name="PreviewImage" HeightRequest="220" Aspect="AspectFit" HorizontalOptions="Center" />
+
+            <inputLayout:SfTextInputLayout Hint="Name">
+                <Entry Text="{Binding Name}" />
+            </inputLayout:SfTextInputLayout>
+
+            <inputLayout:SfTextInputLayout Hint="Description">
+                <Editor AutoSize="TextChanges" Text="{Binding Description}" />
+            </inputLayout:SfTextInputLayout>
+
+            <inputLayout:SfTextInputLayout Hint="Price">
+                <Entry Text="{Binding Price}" Keyboard="Numeric" />
+            </inputLayout:SfTextInputLayout>
+
+            <inputLayout:SfTextInputLayout Hint="Release Date">
+                <DatePicker x:Name="ReleaseDatePicker" />
+            </inputLayout:SfTextInputLayout>
+
+            <inputLayout:SfTextInputLayout Hint="Genre">
+                <Picker x:Name="GenrePicker" ItemDisplayBinding="{Binding Name}" />
+            </inputLayout:SfTextInputLayout>
+
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="20" Margin="0,18,0,0">
+                <Button Text="Save" Clicked="OnSaveClicked" WidthRequest="160" Padding="18,10" />
+                <Button Text="Cancel" Clicked="OnCancelClicked" WidthRequest="160" Padding="18,10" />
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

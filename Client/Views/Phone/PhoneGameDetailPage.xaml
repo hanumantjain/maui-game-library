@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Client.Views.Phone.PhoneGameDetailPage"
+             Title="Game Details"
+             BackgroundColor="White"
+             Padding="15">
+
+    <VerticalStackLayout Spacing="12">
+        
+        <!-- Image -->
+        <Image x:Name="gameImage" HeightRequest="250" Aspect="AspectFill" CornerRadius="8" />
+        
+        <!-- Name -->
+        <Label x:Name="gameName" FontSize="24" FontAttributes="Bold" TextColor="Black" />
+        
+        <!-- Description -->
+        <Label Text="Description:" FontSize="14" FontAttributes="Bold" TextColor="Gray" />
+        <Label x:Name="gameDescription" FontSize="14" TextColor="Black" TextDecorations="None" />
+        
+        <!-- Price -->
+        <Label x:Name="gamePrice" FontSize="16" TextColor="Black" />
+        
+        <!-- Release Date -->
+        <Label x:Name="gameReleaseDate" FontSize="14" TextColor="Black" />
+        
+        <!-- Genre -->
+        <Label Text="Genre:" FontSize="14" FontAttributes="Bold" TextColor="Gray" />
+        <Label x:Name="gameGenre" FontSize="14" TextColor="Black" />
+
+        <!-- Buttons -->
+        <HorizontalStackLayout Spacing="10" Margin="0,20,0,0" HorizontalOptions="Center">
+            <Button Text="Edit" Clicked="OnEditClicked" BackgroundColor="Blue" TextColor="White" WidthRequest="100" />
+            <Button Text="Delete" Clicked="OnDeleteClicked" BackgroundColor="Red" TextColor="White" WidthRequest="100" />
+        </HorizontalStackLayout>
+
+    </VerticalStackLayout>
+
+</ContentPage>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewmodel="clr-namespace:Client.ViewModels"
+    xmlns:models="clr-namespace:Client.Models"
+    x:Class="Client.Views.Desktop.DesktopHomePage"
+    x:DataType="viewmodel:DesktopHomePageViewModel"
+    Title="{Binding Title}"
+    BackgroundColor="White">
+
+    <Grid RowDefinitions="*" ColumnDefinitions="*">
+
+        <CollectionView
+            ItemsSource="{Binding Games}"
+            SelectionMode="Single"
+            SelectionChanged="OnGameSelectionChanged"
+            ItemsLayout="VerticalGrid, 3">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:ProductTem">
+
+                    <Border
+    Margin="10"
+    Padding="10"
+    Stroke="Gray"
+    BackgroundColor="#FFD2CDCD">
+
+    <Border.StrokeShape>
+        <RoundRectangle CornerRadius="8" />
+    </Border.StrokeShape>
+
+    <VerticalStackLayout Spacing="8" Margin="0,0,0,10">
+
+        <Image
+            WidthRequest="250"
+            HeightRequest="250"
+            Source="{Binding Image}"
+            Aspect="AspectFill" />
+
+        <Label
+            Text="{Binding Name}"
+            HorizontalTextAlignment="Center"
+            FontSize="18"
+            TextColor="Black" />
+
+        <Label
+            Text="{Binding Price, StringFormat='$ {0:F2}'}"
+            HorizontalTextAlignment="Center"
+            FontSize="18"
+            TextColor="Black" />
+
+    </VerticalStackLayout>
+
+</Border>
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+    </Grid>
+</ContentPage>

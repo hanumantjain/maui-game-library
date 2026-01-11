@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Client.Views.Phone.PhoneAddProductPage"
+             xmlns:viewmode="clr-namespace:Client.ViewModels"
+             x:DataType="viewmode:AddProductPageViewModel"
+             Title="{Binding Title}"
+             xmlns:inputLayout="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
+             xmlns:editors="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
+             xmlns:calendar="clr-namespace:Syncfusion.Maui.Calendar;assembly=Syncfusion.Maui.Calendar">
+
+    <VerticalStackLayout Spacing="12" Margin="15" Padding="10">
+
+        <Label Text="Add New Game" FontSize="24" HorizontalOptions="Center" />
+        
+        <inputLayout:SfTextInputLayout Hint="Game Name">
+            <Entry Text="{Binding AddProductModel.Name}" />
+        </inputLayout:SfTextInputLayout>
+
+        <inputLayout:SfTextInputLayout Hint="Game Description">
+            <Editor AutoSize="TextChanges" Text="{Binding AddProductModel.Description}" />
+        </inputLayout:SfTextInputLayout>
+
+        <inputLayout:SfTextInputLayout Hint="Genre">
+             <editors:SfComboBox ItemsSource="{Binding Genres}" DisplayMemberPath="Name" TextMemberPath="Name" SelectedItem="{Binding SelectedGenre}" />
+        </inputLayout:SfTextInputLayout>
+
+        <inputLayout:SfTextInputLayout Hint="Price">
+            <Entry Text="{Binding AddProductModel.Price}" />
+        </inputLayout:SfTextInputLayout>
+
+        <inputLayout:SfTextInputLayout Hint="Release Date">
+            <DatePicker Date="{Binding ReleaseDate, Mode=TwoWay}" />
+        </inputLayout:SfTextInputLayout>
+
+        <VerticalStackLayout Spacing="8">
+            <Button Text="Add Image" BackgroundColor="Transparent" TextColor="Blue" Command="{Binding AddImageCommand}" HeightRequest="40"></Button>
+            <Image Source="{Binding ImageSourceFile}" HeightRequest="150" WidthRequest="150" HorizontalOptions="Center"></Image>
+        </VerticalStackLayout>
+
+        <Button Text="Add Game" Command="{Binding SaveGameDataCommand}" Margin="0,20,0,0" />
+
+    </VerticalStackLayout>
+</ContentPage>
